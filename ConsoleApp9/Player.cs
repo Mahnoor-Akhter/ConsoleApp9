@@ -9,7 +9,7 @@ namespace Game
 		public int ID { get; set; }
 
 		public string PlayerName { get; set; }
-		public int Score { get; set; }
+		public int Score { get;private set; }
 
 
 		public Player(int id, string playerName , int score)
@@ -17,6 +17,11 @@ namespace Game
 			ID = id;
 			PlayerName = playerName;
 			Score = score;
+		}
+		public void InceraseScore(int valueToAdd)
+		{
+			if (Score < 100)
+				Score += valueToAdd;
 		}
 	}
 }
